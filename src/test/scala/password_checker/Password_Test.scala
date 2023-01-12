@@ -10,9 +10,13 @@ class Password_Test extends AnyFunSpec with Matchers {
                 val tooShort = "abcde"
                 val longEnough = "abcdef"
                 val evenLonger = "abcdefghi"
+                val capitalpass = "Abcdef"
+                val cpaitalNopass = "Abcde"
                 Password.isValid(tooShort) shouldBe false
                 Password.isValid(longEnough) shouldBe true
                 Password.isValid(evenLonger) shouldBe true
+                Password.isValid(capitalpass) shouldBe true
+                Password.isValid(capitalNopass) shouldBe false
 
             }
         }
