@@ -12,4 +12,6 @@ object Password {
     
     return true 
   }
+
+  def containsCap(password : String) = false
 }

@@ -10,15 +10,25 @@ class Password_Test extends AnyFunSpec with Matchers {
                 val tooShort = "abcde"
                 val longEnough = "abcdef"
                 val evenLonger = "abcdefghi"
-                val capitalpass = "Abcdef"
-                val cpaitalNopass = "Abcde"
+                
                 Password.isValid(tooShort) shouldBe false
                 Password.isValid(longEnough) shouldBe true
                 Password.isValid(evenLonger) shouldBe true
-                Password.isValid(capitalpass) shouldBe true
-                Password.isValid(capitalNopass) shouldBe false
+                
 
             }
+        }
+    }
+}
+
+class Password_Cap_Test extends AnyFunSpec with Matchers {
+    describe("Detirmines if a capital char is present"){
+        it("rejects passwords that have >1 capital chars"){
+            val capitalpass = "Abcdef"
+            val capitalNopass = "Abcde"
+
+            Password.containsCap(capitalpass) shouldBe true
+            Password.containsCap(capitalNopass) shouldBe false
         }
     }
 }
