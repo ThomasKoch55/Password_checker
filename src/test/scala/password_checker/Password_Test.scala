@@ -25,7 +25,7 @@ class Password_Cap_Test extends AnyFunSpec with Matchers {
     describe("Detirmines if a capital char is present"){
         it("rejects passwords that have >1 capital chars"){
             val capitalpass = "Abcdef"
-            val capitalNopass = "Abcde"
+            val capitalNopass = "abcde"
 
             Password.containsCap(capitalpass) shouldBe true
             Password.containsCap(capitalNopass) shouldBe false

@@ -1,7 +1,7 @@
 package password_checker
 
 object Password {
-  def isValid(password : String) : Boolean = 
+  def isValid(password : String): Boolean = 
   {
     var count: Int = 0
     for char <- password do
@@ -13,5 +13,18 @@ object Password {
     return true 
   }
 
-  def containsCap(password : String) = false
+  def containsCap(password : String): Boolean =
+  {
+
+    var cap_detected = false
+
+    for char <- password do
+      
+        if (char.isUpper) then
+
+            cap_detected = true
+          
+    return cap_detected
+      
+  }
 }
